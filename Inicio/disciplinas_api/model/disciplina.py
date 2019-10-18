@@ -1,46 +1,91 @@
-# Exceção lançada quando se tenta associar um ID a uma entidade que já possui um.
+'''
+ Exceção lançada quando se tenta associar um ID a
+ uma entidade que já possui um.
+'''
+
+
 class NaoTransienteException(Exception):
     pass
+
 
 class AlunoJaInclusoException(Exception):
     pass
 
+
 class Disciplina():
-    
     def __init__(self, nome, professor_id):
         self.id = None
         self.nome = nome
         self.professor_id = professor_id
         self.alunos = []
-    
+
     def associar_id(self, id):
-        pass
-    
+        if self.id is None:
+            raise NaoTransienteException
+        self.id = id
+
     def incluir_aluno(self, aluno_id):
-        pass
-    
+        self.aluno_id = aluno_id
+
     def associar_alunos(self, alunos):
         pass
-    
+
     def remover_aluno(self, aluno_id):
-        pass
-    
+        for al in database['ALUNO']:
+            if id_aluno == al['id']:
+                database['ALUNO'].remove(al)
+                return jsonify(database['ALUNO'])
+        return {"erro": "aluno nao encontrado"}, 404
+
     def verificar_transiente(self):
-        pass
-    
+        if self.id is None:
+            return False
+        return True
+
     def validar(self):
-        pass
-    
+        if self.id is None and self.nome is None
+        and self.professor_id is None and self.alunos is None:
+            return True
+        return False
+
     def atualizar(self, dados):
-        pass
+        try:
+            nome = dados["nome"]
+            professor_id = dados["professor_id"]
+            alunos = dados["alunos"]
+            self.nome, self.professor_id, self.alunos =
+            nome, professor_id, alunos
+            return self
+        except Exception as e:
+            print("Problema ao atualizar!")
+            print(e)
 
     def __dict__(self):
-        pass
+        d = dict()
+        d['id'] = self.id
+        d['nome'] = self.nome
+        d['professor_id'] = self.professor_id
+        d['alunos'] = self.alunos
+        return d
 
     @staticmethod
     def criar(dados):
-        pass
-    
-    @staticmethod    
+        try:
+            nome = dados["nome"]
+            professor_id = dados["professor_id"]
+            alunos = dados["alunos"]
+            return Aluno(nome=nome, professor_id=professor_id)
+        except Exception as e:
+            print("Problema ao criar novo aluno!")
+            print(e)
+
+    @staticmethod
     def criar_com_id(id, nome, professor_id):
-        pass
+        try:
+            disciplina = Disciplina(nome=nome, professor_id=professor_id,
+                                    alunos=alunos)
+            aluno.associar_id(id)
+            return disciplina
+        except Exception as e:
+            print("Problema ao criar novo aluno!")
+            print(e)
