@@ -31,7 +31,11 @@ class Disciplina():
         pass
 
     def remover_aluno(self, aluno_id):
-        pass
+        for al in database['ALUNO']:
+            if id_aluno == al['id']:
+                database['ALUNO'].remove(al)
+                return jsonify(database['ALUNO'])
+        return {"erro": "aluno nao encontrado"}, 404
 
     def verificar_transiente(self):
         if self.id is None:
@@ -77,4 +81,11 @@ class Disciplina():
 
     @staticmethod
     def criar_com_id(id, nome, professor_id):
-        pass
+        try:
+            disciplina = Disciplina(nome=nome, professor_id=professor_id,
+                                    alunos=alunos)
+            aluno.associar_id(id)
+            return disciplina
+        except Exception as e:
+            print("Problema ao criar novo aluno!")
+            print(e)
