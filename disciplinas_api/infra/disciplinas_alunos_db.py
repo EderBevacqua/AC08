@@ -3,12 +3,12 @@ import sqlite3
 db_name = "disciplinas.db"
 table_name = "disciplina_aluno"
 
-sql_create_table = f"CREATE TABLE IF NOT EXISTS {table_name} ...;"
+sql_create_table = f"CREATE TABLE disciplina_aluno (id INT IDENTITY PRIMARY KEY, disciplina INT NOT NULL, aluno_id INT NOT NULL);"
 
 def createTable(cursor, sql):
     cursor.execute(sql)
 
-def popularDb(cursor, disciplina_id, aluno_id):
+def popularDb(cursor, disciplina, aluno_id):
     pass
 
 def init():
@@ -16,9 +16,9 @@ def init():
     cursor = connection.cursor()
     createTable(cursor, sql_create_table)
     try:
-        popularDb(cursor, 1, 1)
-        popularDb(cursor, 2, 2)
-        popularDb(cursor, 3, 3)
+        popularDb(cursor, "Desenvolvimento de aplic. distribuidas", 1)
+        popularDb(cursor, "Estrutura de dados", 2)
+        popularDb(cursor, "LPT 1", 3)
     except:
         pass
     cursor.close()
@@ -26,4 +26,3 @@ def init():
     connection.close()
     
 init()
-
