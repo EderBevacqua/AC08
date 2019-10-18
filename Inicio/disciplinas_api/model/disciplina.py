@@ -28,14 +28,12 @@ class Disciplina():
         self.aluno_id = aluno_id
 
     def associar_alunos(self, alunos):
-        pass
+        self.alunos.extend(alunos)
 
     def remover_aluno(self, aluno_id):
-        for al in database['ALUNO']:
-            if id_aluno == al['id']:
-                database['ALUNO'].remove(al)
-                return jsonify(database['ALUNO'])
-        return {"erro": "aluno nao encontrado"}, 404
+        for aluno in self.alunos:
+            if id_aluno == aluno['id']:
+                self.alunos.pop()
 
     def verificar_transiente(self):
         if self.id is None:
