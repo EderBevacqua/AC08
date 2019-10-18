@@ -1,0 +1,85 @@
+h1 {
+    text-align: center;
+}
+
+h2 {
+    border-bottom: 2px solid black;
+}
+
+body {
+    background: rgba(70, 142, 236);
+    font: normal 15pt Arial;
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+section#cadastro {
+    background: rgb(229, 234, 252);
+    border-radius: 10px;
+    padding: 5px;
+    width: 500px;
+    box-shadow: 5px 5px 10px black;
+    right: -100px;
+    position: relative;
+}
+
+section#remo {
+    background: rgb(229, 234, 252);
+    border-radius: 10px;
+    padding: 20px;
+    width: 500px;
+    box-shadow: 5px 5px 10px black;
+    float: right;
+    position: relative;
+    top: -680px;
+    right: 100px;
+}
+
+section#disc {
+    background: rgb(229, 234, 252);
+    border-radius: 10px;
+    padding: 100px;
+    width: 500px;
+    box-shadow: 5px 5px 10px black;
+    top: 50px;
+    position: relative;
+    right: -300px;
+}
+
+section#gere {
+    background: rgb(229, 234, 252);
+    border-radius: 10px;
+    padding: 5px;
+    width: 500px;
+    box-shadow: 5px 5px 10px black;
+    position: relative;
+    top: 90px;
+    right: -100px;
+}
+
+section#listar {
+    background: rgb(229, 234, 252);
+    border-radius: 10px;
+    padding: 20px;
+    width: 500px;
+    box-shadow: 5px 5px 10px black;
+    float: right;
+    position: relative;
+    top: -265px;
+    right: 100px;
+}
+
+section#remoD {
+    background: rgb(229, 234, 252);
+    border-radius: 10px;
+    padding: 50px;
+    width: 500px;
+    box-shadow: 5px 5px 10px black;
+    top: 50px;
+    position: relative;
+    right: -300px;
+    top: 150px;
+}
